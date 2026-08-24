@@ -20,15 +20,15 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
-    - name: Configurar Gradle 8.11 en el sistema
+    - name: Configurar Gradle 9.3.1 en el sistema
       run: |
-        wget https://services.gradle.org/distributions/gradle-8.11-bin.zip
-        sudo unzip -d /opt/gradle gradle-8.11-bin.zip
-        echo "/opt/gradle/gradle-8.11/bin" >> $GITHUB_PATH
+        wget https://services.gradle.org/distributions/gradle-9.3.1-bin.zip
+        sudo unzip -d /opt/gradle gradle-9.3.1-bin.zip
+        echo "/opt/gradle/gradle-9.3.1/bin" >> $GITHUB_PATH
 
-    - name: Generar wrapper y dar permisos
+    - name: Generar wrapper con Gradle 9.3.1 y dar permisos
       run: |
-        /opt/gradle/gradle-8.11/bin/gradle wrapper --gradle-version 8.11
+        /opt/gradle/gradle-9.3.1/bin/gradle wrapper --gradle-version 9.3.1
         chmod +x gradlew
 
     - name: Compilar APK Debug
