@@ -20,16 +20,15 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Instalar Gradle en el sistema
+    - name: Configurar Gradle 8.5 en el sistema
       run: |
-        sudo apt-get update
-        sudo apt-get install -y gradle
+        wget https://services.gradle.org/distributions/gradle-8.5-bin.zip
+        sudo unzip -d /opt/gradle gradle-8.5-bin.zip
+        echo "/opt/gradle/gradle-8.5/bin" >> $GITHUB_PATH
 
-    - name: Generar wrapper y dar permisos
+    - name: Generar wrapper moderno y dar permisos
       run: |
-        if [ ! -f gradlew ]; then
-          gradle wrapper
-        fi
+        /opt/gradle/gradle-8.5/bin/gradle wrapper --gradle-version 8.5
         chmod +x gradlew
 
     - name: Compilar APK Debug
