@@ -14,21 +14,21 @@ jobs:
     - name: Checkout del código
       uses: actions/checkout@v4
 
-    - name: Configurar JDK 17
+    - name: Configurar JDK 21
       uses: actions/setup-java@v5
       with:
-        java-version: '17'
+        java-version: '21'
         distribution: 'temurin'
 
-    - name: Configurar Gradle 8.5 en el sistema
+    - name: Configurar Gradle 8.11 en el sistema
       run: |
-        wget https://services.gradle.org/distributions/gradle-8.5-bin.zip
-        sudo unzip -d /opt/gradle gradle-8.5-bin.zip
-        echo "/opt/gradle/gradle-8.5/bin" >> $GITHUB_PATH
+        wget https://services.gradle.org/distributions/gradle-8.11-bin.zip
+        sudo unzip -d /opt/gradle gradle-8.11-bin.zip
+        echo "/opt/gradle/gradle-8.11/bin" >> $GITHUB_PATH
 
-    - name: Generar wrapper moderno y dar permisos
+    - name: Generar wrapper y dar permisos
       run: |
-        /opt/gradle/gradle-8.5/bin/gradle wrapper --gradle-version 8.5
+        /opt/gradle/gradle-8.11/bin/gradle wrapper --gradle-version 8.11
         chmod +x gradlew
 
     - name: Compilar APK Debug
