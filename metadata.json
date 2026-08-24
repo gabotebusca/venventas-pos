@@ -1,0 +1,6 @@
+{
+  "name": "VenVentas POS",
+  "description": "Punto de venta e inventario para Venezuela con tasa oficial BCV, conversor Bs/$, tickets para WhatsApp, créditos y recordatorios de cobro quincenales.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
