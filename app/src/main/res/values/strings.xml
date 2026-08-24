@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">VenVentas POS</string>
+    <string name="title_pos">Punto de Venta</string>
+    <string name="title_history">Historial de Ventas</string>
+    <string name="title_inventory">Inventario</string>
+    <string name="title_credits">Créditos y Fiados</string>
+    <string name="title_converter">Conversor Bs/$</string>
+    <string name="title_quincena">Cobros Quincenales</string>
+    <string name="title_analytics">Ganancias y Balance</string>
+</resources>
